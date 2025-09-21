@@ -4,12 +4,16 @@
 This project analyzes banking loan data and classifies clients based on their credit scores using Python and Excel.  
 It includes feature engineering, pivot table analysis, DAX metrics, and dashboard design for executive insights.
 
+---
+
 ## 🛠️ Tools Used
 - Excel – Dashboard design, DAX metrics, pivot tables  
 - Power Query – Data cleaning and transformation  
 - Python (pandas) – Credit score classification  
 - Jupyter Notebook – Optional workflow documentation  
 - GitHub – Project hosting and version control
+
+---
 
 ## 🧠 Workflow Summary
 
@@ -18,11 +22,14 @@ It includes feature engineering, pivot table analysis, DAX metrics, and dashboar
 - Handled missing values in `Credit_Score` and `Monthly_Installment`
 
 ### 2. Credit Score Classification (Python)
+
 ```python
 import pandas as pd
 
+# Load the loan dataset
 df = pd.read_excel("banking_data.xlsx")
 
+# Define credit score classification function
 def classify_credit(score):
     if score > 750:
         return "Satisfactory"
@@ -31,9 +38,11 @@ def classify_credit(score):
     else:
         return "Unsatisfactory"
 
+# Apply classification to each customer
 df["Risk_Category"] = df["Credit_Score"].apply(classify_credit)
-df.to_excel("banking_data_with_risk.xlsx", index=False)
 
+# Save the updated dataset to a new Excel file
+df.to_excel("banking_data_with_risk.xlsx", index=False)
 3. Pivot Table Analysis (Excel)
 Loan Status × Loan Type
 
@@ -50,7 +59,17 @@ Total Loan Amount per Status
 4. Dashboard Design
 Title: Loan Portfolio Dashboard – Summary of Insights
 
-Filters: Branch, Guarantee, Loan Type, Monthly Installment, Interest Rate
+Filters:
+
+Branch
+
+Guarantee
+
+Loan Type
+
+Monthly Installment
+
+Interest Rate
 
 Charts:
 
@@ -66,7 +85,9 @@ Loan Status vs. Credit Status
 
 Average Monthly Installment per Status
 
-KPIs: Total loan amount by status
+KPIs:
+
+Total loan amount by status
 
 📸 Dashboard Preview
 
